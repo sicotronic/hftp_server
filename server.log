@@ -1,0 +1,30 @@
+
+###############################################################
+
+Welcome to the HFTP server - The Home Made File Transfer Server
+Date: 30/05/2013; Time: 14:34:13 
+
+Iniciating Server...
+Running the server in the port 19500
+
+# CONECTION NUMBER: 1 
+Time: 14:34:13 
+
+
+Waiting for Conection...
+Conected with:  ( '127.0.0.1' )
+It was requested to show the files in the current directory
+The list of files was sent
+It was requested to show the metadata of the file: README
+The metadata was sent
+It was requested to send the bytes of the file README from 0 to 9733
+Sending file: 
+File was successfuly sent
+It was requested to close the server
+Closing the conection with the socket 4...
+
+# CONECTION NUMBER: 2 
+Time: 14:34:33 
+
+
+Waiting for Conection...

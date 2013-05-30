@@ -1,0 +1,61 @@
+This is a FTP server implementation.
+This was implemented as one of the projects of the Networks and Distributed Systems subject at College.
+
+For this project, the folder: hftp_client with its files was provided by the teacher.
+I had to implement the files: 
+common.h
+constants.h
+flexible_array.h
+flexible_array.c
+hftp_ops.h
+hftp_ops.c
+lexer.h
+lexer.c
+list_s.h
+list_s.c
+main_server.c
+mem_fun.h
+mem_fun.c
+parser.h
+parser.c
+pflog.h
+pflog.c
+server.h
+server.c
+tad_string.h
+
+This server application that can establish a connection with the client running in the same or different systems.
+
+The server is implemented completely in C.
+
+The server handles one conection at a time, and the clients can ask the following requests:
+
+    * List all the files available in the server.
+    * Given an existing file in the server, obtain the size of it.
+    * Given an existing file in the server, obtain a fragment of it. This fragment will be given as an offset and size pair.
+    * Finish the conection
+
+				Modularization of the Server:
+
+		[pflog]	<------	[M A I N - S E R V E R]
+		  A	_______/    |		|      \____________________
+		  |    V	    V		|			    |
+		[SERVER]-------->[list_s]	|			    V
+					A	V			[FTP_INFO]
+					'-------[PARSER]
+						|
+	[mem_fun]				V
+	(utilizada por todos)			[lexer]
+						|
+						V
+						[flexible_array]
+
+Server (server.c):
+	This module will be responsible of conect the a socket to the established port (19500) and run a FTP server who will listen for conections there.
+
+Parser (parser.c):
+	Implementation of a request parser that is used to handle the requests of the HFTP client.
+
+FTP Info (hftp_ops.c):
+	Module that obtains the information requested by the client in the local server-side.
+
